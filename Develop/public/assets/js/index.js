@@ -1,5 +1,6 @@
 let noteTitle;
 let noteText;
+let noteid;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
