@@ -27,7 +27,7 @@ app.get('/api/notes', (req, res) =>{
   res.json(db)
 })
 
-app.post('/api/notes', function(req,res){
+app.post('/api/notes', (req,res) =>{
   const note = req.body
   note.id = randomId(len, pattern)
   db.push(note)
@@ -36,10 +36,28 @@ app.post('/api/notes', function(req,res){
     if (err) {
       return console.log(err)
     } 
-      console.log('your note was saved')
   })
   res.json(note)
 })
+
+app.delete('/api/notes/:id', (req,res) =>{
+  for (let i=0; i<db.length;i++){
+    if( req.params.id == db[i].id){
+      db.splice(i,1)
+    }
+  }
+  fs.writeFile(('./Develop/db/db.json', JSON.stringify(db), (err) =>{
+    if (err) {
+      return console.log(err)
+    }
+    res.json(db)
+  }))
+})
+
+
+
+
+
 
 
 app.listen(PORT, () =>
