@@ -54,15 +54,11 @@ app.delete('/api/notes/:id', (req,res) =>{
       return db.splice(i,1)
     }
   }
-  fs.writeFile(('./db/db.json', JSON.stringify(db), (err) =>{
-    if (err) {
-      return console.log(err)
-    }
+  fs.writeFile(('./db/db.json', JSON.stringify(db), (err) => {
+    if (err) throw (err)
     res.json(db)
   }))
-})
-
-// Tells express what port to listen to
+  })
 
 app.listen(PORT, () =>
   console.log(`Now listening at http://localhost:${PORT}`)
