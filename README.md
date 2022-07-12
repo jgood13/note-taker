@@ -14,9 +14,12 @@ If you're viewing a comment and want to make a new one click on the plus sign on
 2. FS
 3. randomID
 
+## Github Repo
+<a href = "https://github.com/jgood13/note-taker"
+target="_blank">Github Repo</a>
 
 ## Live Page
-<a href = "https://jgood13.github.io/note-taker"
+<a href = "https://powerful-shelf-02110.herokuapp.com/"
 target="_blank">Live  page</a>
 
 ## Screenshot/Gif
