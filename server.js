@@ -41,24 +41,24 @@ app.post('/api/notes', (req,res) =>{
 
   fs.writeFile('./db/db.json', JSON.stringify(db), (err) =>{
     if (err) {
-      return console.log(err)
-    } 
+      return console.log(err)} 
   })
   res.json(note)
 })
 
 //  Delete request to delete information
-app.delete('/api/notes/:id', (req,res) =>{
+app.delete('/api/notes/:id', (req,res)  =>{
   for (let i=0; i<db.length;i++){
     if( req.params.id == db[i].id){
-      return db.splice(i,1)
+      return db.splice([i],1)
     }
   }
-  fs.writeFile(('./db/db.json', JSON.stringify(db), (err) => {
-    if (err) throw (err)
+  fs.writeFile('./db/db.json', JSON.stringify(db), (err) => {
+    if (err) {
+      return console.log(err)}
     res.json(db)
-  }))
   })
+})
 
 app.listen(PORT, () =>
   console.log(`Now listening at http://localhost:${PORT}`)
